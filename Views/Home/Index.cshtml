@@ -1,0 +1,64 @@
+﻿@model IList<Forum.Models.Dtos.PostDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* <div class="text-center image">
+   <div>
+       <h2>Discussion Forum</h2>
+   </div>
+   <div>
+       <div>
+            <a href="/Home/Create" class="btn btn-primary">Add Post</a>
+            <a asp-action="Edit" asp-route-id="@Model.Select(x=>x.PostId)">Edit Post</a> |
+            <a href="/Home/Create" class="btn btn-primary">Delete Post</a>
+       </div>
+        <div class="card-body border">
+            @foreach(var data in Model)
+            {
+                <h4>Content : @data?.Content</h4>
+                <h4>CreatedAt : @data?.CreatedAt</h4>
+               // <h4>UserName : @data?.UserName</h4>
+            }
+        </div>
+   </div>
+</div> *@
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Content</th>
+                <th>CreatedAt </th>
+                <th>PostType </th>
+                <th>Add Action</th>
+                <th>Edit Action</th>
+                <th>Delete Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PosType)
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Create" class="btn">Add Post</a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Edit" class="btn" asp-route-postId="@item.PostId">Edit</a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-controller="Home" asp-action="Delete" class="btn" asp-route-postId="@item.PostId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
