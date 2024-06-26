@@ -29,9 +29,6 @@ namespace Forum.Controllers
         public IActionResult Registration(User user)
         {
             bool Data = _home.Adduser(user);
-
-
-
             return RedirectToAction("Home/Index");
         }
     }
