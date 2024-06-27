@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Forum</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-o/VfPvv6Tn0Fo1q8MB7vF5Z6pE7Qv+RlAzup2sQJQDrprm2p6Wc0VVszYWd9v/I" crossorigin="anonymous">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Forum.styles.css" asp-append-version="true" />
@@ -36,7 +37,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-bottom  bg-light text-center text-lg-start mt-auto">
         <div class="container">
             &copy; 2024 - Forum - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
@@ -47,7 +48,9 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate.unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    @* <script src="https://cdn.jsdelivr.net/npm/@propperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvDHAJChB4rDPh3gx7/wl5r+0nIv0jF/ULe0j4cUUH6g5IIcbthLDszotEdDlgg" crossorigin="anonymous"></script> *@
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgC7ymFn1WNTU8S16f4vEB5yZKlK77Q1JwC1RbJC5WFfRPHnI8Z" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

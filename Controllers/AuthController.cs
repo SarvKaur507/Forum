@@ -3,6 +3,7 @@ using Forum.Models.Dtos;
 using Forum.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Forum.Controllers
 {
@@ -26,10 +27,18 @@ namespace Forum.Controllers
         }
 
         [HttpPost]
-        public IActionResult Registration(User user)
+        public IActionResult Register(User user)
         {
             bool Data = _home.Adduser(user);
-            return RedirectToAction("Home/Index");
+            if (Data)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "An error occurred while adding the user.");
+                return View(user);
+            }
         }
     }
 }

@@ -13,6 +13,14 @@ html {
     font-size: 16px;
   }
 }
+/* site.css */
+html, body {
+    height: 100%;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: #cb0a0b;
@@ -22,9 +30,8 @@ html {
   position: relative;
   min-height: 100%;
 }
-
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 .border{
     border:2px solid black;
@@ -43,9 +50,4 @@ body {
     justify-content: center;
     background-color: #c50808;
     color : white;
-}
-.register{
-    display:flex;
-    align-items : center;
-    justify-content : space-evenly
 }
