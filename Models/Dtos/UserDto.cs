@@ -14,6 +14,10 @@
 
         public string? EMail { get; set; }
 
-        public int? PhoneNo { get; set; }
+        public int? PhoneNo { get; set; } = null;
+
+        public string? PasswordHash { get; set; }
+
+        public string? PasswordSalt { get; set; }
     }
 }

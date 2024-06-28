@@ -11,5 +11,6 @@ namespace Forum.Services.IServices
         bool DeletebyId(int? postId);
         List<UserDto> GetUser();
         bool Adduser(User user);
+        UserDto LogIn(UserDto user);
     }
 }

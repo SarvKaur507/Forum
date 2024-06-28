@@ -51,6 +51,12 @@ namespace Forum.Services
             var data = _authDirectory.Adduser(user);
             return true;
         }
+        public UserDto LogIn(UserDto user)
+        {
+            UserDto dto = new UserDto();
+            var data = _authDirectory.LogIn(user);
+            return dto;
+        }
 
     }
 }

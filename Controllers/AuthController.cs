@@ -32,13 +32,29 @@ namespace Forum.Controllers
             bool Data = _home.Adduser(user);
             if (Data)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("LogIn", "Auth");
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "An error occurred while adding the user.");
                 return View(user);
             }
+        }
+        [HttpGet]
+        public IActionResult LogIn()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult LogIn(UserDto user)
+        {
+             UserDto data = _home.LogIn(user);
+            return RedirectToAction("Index", "Home");
+        }
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            return RedirectToAction("LogIn", "Auth");
         }
     }
 }

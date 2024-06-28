@@ -27,5 +27,9 @@ public partial class User
     public string? EMail { get; set; }
     [Required]
     [Display(Name = "Phone No")]
-    public int? PhoneNo { get; set; }
+    public int? PhoneNo { get; set; } = null;
+
+    public string? PasswordHash { get; set; }
+
+    public string? PasswordSalt { get; set; }
 }

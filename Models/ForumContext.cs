@@ -41,6 +41,12 @@ public partial class ForumContext : DbContext
             entity.Property(e => e.FirstName).HasMaxLength(255);
             entity.Property(e => e.LastName).HasMaxLength(265);
             entity.Property(e => e.Password).HasMaxLength(255);
+            entity.Property(e => e.PasswordHash)
+                .HasMaxLength(500)
+                .HasColumnName("password_hash");
+            entity.Property(e => e.PasswordSalt)
+                .HasMaxLength(100)
+                .HasColumnName("password_salt");
             entity.Property(e => e.PhoneNo).HasColumnType("int(11)");
             entity.Property(e => e.Username)
                 .HasMaxLength(255)

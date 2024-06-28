@@ -7,5 +7,6 @@ namespace Forum.Directories.IDirectiories
     {
         List<UserDto> GetUser();
         bool Adduser(User user);
+        UserDto LogIn(UserDto user);
     }
 }
